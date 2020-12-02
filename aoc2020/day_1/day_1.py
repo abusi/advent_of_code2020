@@ -1,6 +1,3 @@
-from aoc2020.utils import read_input
-
-
 def make_int(alist):
     r = []
     for a in alist:
