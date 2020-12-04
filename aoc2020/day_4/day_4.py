@@ -1,4 +1,3 @@
-import re
 from enum import Enum
 
 from pydantic import BaseModel, Extra, Field, validator
@@ -28,9 +27,6 @@ def make_passport(inp):
             c = {}
     r.append(c)
     return r
-
-
-_RCM = re.compile("^([0-9]{2,3})([a-z]{2})$")
 
 
 class PP(BaseModel):
@@ -113,7 +109,7 @@ def stages(inp):
             try:
                 pp = PP(**pp)
                 valid_2 += 1
-            except Exception as e:
+            except Exception:
                 pass
 
     return valid_1, valid_2
