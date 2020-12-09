@@ -1,5 +1,4 @@
-from aoc2020.day_1.day_1 import make_int
-from aoc2020.day_1.day_1 import stage_one
+from aoc2020.day_1.day_1 import make_int, stage_one
 
 
 def find_sumable_contigues(inp, s1):
