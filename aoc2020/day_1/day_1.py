@@ -7,7 +7,7 @@ def make_int(alist):
 
 def stage_one(inp, target=2020):
     for value in inp:
-        if (target - value) in inp:
+        if abs(target - value) in inp:
             return (target - value) * value
     return 0
 
