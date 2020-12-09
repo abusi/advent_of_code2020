@@ -15,8 +15,6 @@ def solve(inp):
 
     r1_3 = stage_one(inp)
 
-    print(f"One: {r1_3}")
-
     r1_1 = stage_one(inp, 1, 1)
     r1_5 = stage_one(inp, 1, 5)
     r1_7 = stage_one(inp, 1, 7)
@@ -24,4 +22,4 @@ def solve(inp):
 
     r = r1_3 * r1_1 * r1_5 * r1_7 * r2_1
 
-    print(f"Two: {r}")
+    return r1_3, r

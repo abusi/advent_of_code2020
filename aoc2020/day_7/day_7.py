@@ -49,9 +49,10 @@ def solve(inp):
     for _, cont in bags.items():
         c += does_it_contains(bags, cont, "shiny gold")
 
-    print(f"One: {c}")
+    s1 = c
 
     c = 0
     for x in bags["shiny gold"]:
         c += x[0] * number_of_bags_need(bags, x[1]) + x[0]
-    print(f"Two: {c}")
+
+    return s1, c

@@ -118,7 +118,4 @@ def stages(inp):
 def solve(inp):
     r = make_passport(inp)
 
-    s1, s2 = stages(r)
-
-    print(f"One: {s1}")
-    print(f"Two: {s2}")
+    return stages(r)

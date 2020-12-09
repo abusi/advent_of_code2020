@@ -40,5 +40,4 @@ def stage_2(inp):
 def solve(inp):
     inp = transform_input_list(inp)
 
-    print(f"One: {stage_1(inp)}")
-    print(f"Two: {stage_2(inp)}")
+    return stage_1(inp), stage_2(inp)

@@ -21,11 +21,10 @@ def solve(inp):
         sids.append(sid)
         if sid > max:
             max = sid
-    print(f"One: {max}")
+    s1 = max
     sids = sorted(sids)
     l = 0
     for i in range(1, len(sids)):
         l = sids[i - 1]
         if sids[i] > l + 1:
-            print(f"Two: {sids[i] - 1}")
-            break
+            return s1, sids[i] - 1

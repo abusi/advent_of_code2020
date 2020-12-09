@@ -22,5 +22,4 @@ def solve(inp):
 
     s1 += len(uniq)
     s2 += len(al)
-    print(f"One: {s1}")
-    print(f"Two: {s2}")
+    return s1, s2

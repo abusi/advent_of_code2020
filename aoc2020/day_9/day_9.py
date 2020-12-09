@@ -1,4 +1,5 @@
-from aoc2020.day_1.day_1 import make_int, stage_one
+from aoc2020.day_1.day_1 import stage_one
+from aoc2020.utils import make_int
 
 
 def find_sumable_contigues(inp, s1):
@@ -24,13 +25,11 @@ def solve(inp):
     s1 = 0
 
     for i, n in enumerate(data):
-        if not stage_one(preamble, n):
+        if not stage_one(preamble, n, uabs=True):
             s1 = n
             break
         preamble = inp[i + 1 :][:ps]
 
-    print(f"One: {s1}")
-
     sumable = find_sumable_contigues(inp, s1)
 
-    print(f"Two: {min(sumable) + max(sumable)}")
+    return s1, min(sumable) + max(sumable)

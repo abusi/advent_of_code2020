@@ -28,7 +28,6 @@ def _execute(inp):
 
 def solve(inp):
     s1, _ = _execute(inp)
-    print(f"One: {s1}")
     lim = 0
     r = -1
     s2 = 0
@@ -48,4 +47,4 @@ def solve(inp):
                 s2, r = _execute(modified)
                 break
 
-    print(f"Two: {s2}")
+    return s1, s2
