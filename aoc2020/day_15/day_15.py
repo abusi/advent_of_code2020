@@ -1,3 +1,6 @@
+from typing import DefaultDict
+
+
 def stage1(spoken):
     for i in range(len(spoken) + 1, 2020 + 1):
         if spoken[-1] not in spoken[:-1]:
@@ -10,19 +13,20 @@ def stage1(spoken):
 
 
 def when_was_i_seen_before(indexes, x):
-    if len(indexes[x]) == 1:
+    try:
+        return indexes[x][-2]
+    except:
         return indexes[x][0]
-    return indexes[x][-2]
 
 
 def add_to_indexes(index, x, i):
-    if x not in index:
-        index[x] = []
     index[x].append(i)
 
 
 def stage2(spoken):
-    index = {x: [i] for i, x in enumerate(spoken)}
+    index = DefaultDict(lambda: [])
+    for i, x in enumerate(spoken):
+        index[x] = [i]
 
     for i in range(len(spoken), 30000000):
         if (lspoken := when_was_i_seen_before(index, spoken[-1])) == i - 1:
